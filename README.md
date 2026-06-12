@@ -38,6 +38,21 @@ A modern Flask-based movie collection manager that allows users to create person
 * Gunicorn
 * Render
 
+## 🗂️ Project Structure
+
+```text
+MoviWebApp/
+├── app.py              # Flask routes and app configuration
+├── data_manager.py     # Database operations
+├── database_setup.py   # Database initialization and setup
+├── models.py           # SQLAlchemy models
+├── movie_service.py    # OMDb API and movie helper logic
+├── seed_data.py        # Demo data for deployment
+├── templates/          # Jinja2 HTML templates
+├── static/             # CSS files
+└── screenshots/        # Project screenshots
+```
+
 ## 📸 Screenshot
 
 ### Movie Collection
