@@ -35,11 +35,7 @@ A modern Flask-based movie collection manager that allows users to create person
 * Gunicorn
 * Render
 
-## 📸 Screenshots
-
-### Homepage
-
-![Homepage](screenshots/homepage.png)
+## 📸 Screenshot
 
 ### Movie Collection
 
@@ -47,56 +43,18 @@ A modern Flask-based movie collection manager that allows users to create person
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
-
-```bash
-git clone <your-repository-url>
-cd MoviWebApp
-```
-
-### 2. Create a .env File
-
-```env
-API_KEY=your_omdb_api_key
-```
-
-### 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Run the Application
-
-```bash
-python app.py
-```
-
-### 5. Open in Browser
-
-```text
-http://127.0.0.1:5000
-```
+1. Clone Repository: `git clone <repository-url>`
+2. Enter Project Folder: `cd MoviWebApp`
+3. Create `.env`: `API_KEY=your_omdb_api_key`
+4. Install Dependencies: `pip install -r requirements.txt`
+5. Run Application: `python app.py`
+6. Open Browser: `http://127.0.0.1:5000`
 
 ## 🌐 Deployment on Render
 
-### Build Command
-
-```bash
-pip install -r requirements.txt
-```
-
-### Start Command
-
-```bash
-gunicorn app:app
-```
-
-### Environment Variables
-
-```env
-API_KEY=your_omdb_api_key
-```
+1. Build Command: `pip install -r requirements.txt`
+2. Start Command: `gunicorn app:app`
+3. Environment Variable: `API_KEY=your_omdb_api_key`
 
 The database is initialized automatically on startup.
 
