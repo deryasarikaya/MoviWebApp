@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if request.args.get('error') == 'user_exists' %}
+<script>
+    window.alert("User already exists. Please choose another name.");
+</script>
+{% endif %}
+
+<section class="home-hero">
+    <p class="eyebrow">MoviWeb App</p>
+    <h1>Build personal movie collections.</h1>
+    <p class="page-intro">
+        Create users, save favorite movies, fetch movie data from OMDb, and manage each collection in one place.
+    </p>
+</section>
+
+<section class="section-title">
+    <h2>Choose a collection</h2>
+</section>
+
+<section class="users-page">
+    <div class="users-panel">
+        {% if users %}
+        <ul class="user-grid">
+            {% for user in users %}
+            <li>
+                <a href="{{ url_for('get_movies', user_id=user.id) }}" class="user-card">
+                    <span class="user-initial">{{ user.initial }}</span>
+                    <span class="user-info">
+                        <strong>{{ user.name }}</strong>
+                        <small>{{ user.movie_count }} movies</small>
+                    </span>
+                    <span class="view-collection">View collection</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p class="empty-state">No users yet. Create your first profile.</p>
+        {% endif %}
+    </div>
+
+    <aside class="add-user-card">
+        <h2>Add User</h2>
+        <p>Create a separate collection for another movie lover.</p>
+        <form action="{{ url_for('create_user') }}" method="post" class="compact-form">
+            <input type="text" name="name" placeholder="Enter username" required>
+            <button type="submit">Add User</button>
+        </form>
+    </aside>
+</section>
+
+{% endblock %}
